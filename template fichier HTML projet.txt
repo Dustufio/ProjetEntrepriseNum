@@ -1,0 +1,12 @@
+<H1>Demande d'approbation de note de frais</H1>
+
+<table border=1>
+<tr> <td><B> Date :</B></td> <td> @{body('Get_response_details')?['submitDate']} </td></tr>
+<tr> <td><B> Responder :</B> </td> <td> @{body('Get_response_details')?['responder']} </td></tr>
+<tr> <td> <B>Type :</B></td> <td> @{body('Get_response_details')?['r71f30cf310284282b65bbe95fe66f976']} </td></tr>
+<tr> <td><B> Montant :</B></td> <td>@{if(equals(body('Get_response_details')?['r71f30cf310284282b65bbe95fe66f976'],'Kilométrique'), mul(float(body('Get_response_details')?['rc0c108d113da486980d461e12c9aa4e3']),float (0.4202)),body('Get_response_details')?['r823f92a39241445dab1c1d079f652a19'])}  € </td></tr>
+@{if(equals(body('Get_response_details')?['r71f30cf310284282b65bbe95fe66f976'],'Kilométrique'), concat('<tr><td><B>Kilomètres :</B></td><td>', body('Get_response_details')?['rc0c108d113da486980d461e12c9aa4e3'],'</td></tr>'),'')}
+<tr> <td COLSPAN=2> <B>Raison : </B>@{body('Get_response_details')?['rd0e1340c0f6d40f99e92f577f575b3e1']}</td> </tr>
+<tr><td COLSPAN=2> Approuvée le @{body('Start_an_approval')?['completionDate']} par @{items('For_each_2')?['responder']?['email']}</td> </tr>
+
+</table>
