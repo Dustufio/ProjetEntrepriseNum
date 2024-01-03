@@ -14,4 +14,6 @@ wc -x <nom_fichier>			= word count, 	permet de compter le nombre d'octets (-c),
 passwd					permet de changer le password du user actuel
 
 
+blablabla
+
 
