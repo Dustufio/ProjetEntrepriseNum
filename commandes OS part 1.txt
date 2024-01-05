@@ -1,19 +1,56 @@
-OS - LABO 1
-
+OS - LABO 2
 Commandes Linux :
-<commande> --help			affiche l'aide relative à cette commande
-cd					= change directory, permet d'accéder à un répertoire
-ls					permet de lister tous les éléments du répertoire actuel
-dir					similaire à ls
-mkdir -v <nom_repertoire>		créer un répertoire dans le répertoire actuel
-touch <nom_fichier> 			créer un fichier dans le répertoire actuel
-head -n x				affiche les x premières lignes (par défaut, 10)
-tail -n x				affiche les x dernières lignes (par défaut, 10)
+
+<commande> --help			Affiche l'aide relative à cette commande
+cd					= change directory, Accède à un répertoire
+ls					Liste tous les éléments du répertoire actuel
+dir					Similaire à ls
+mkdir -v <nom_repertoire>		Crée un répertoire dans le répertoire actuel
+touch <nom_fichier> 			Crée un fichier dans le répertoire actuel
+head -n x				Affiche les x premières lignes (par défaut, 10)
+tail -n x				Affiche les x dernières lignes (par défaut, 10)
 wc -x <nom_fichier>			= word count, 	permet de compter le nombre d'octets (-c),
 							caractères (-m), mots (w), lignes (l) d'un fichier
-passwd					permet de changer le password du user actuel
+passwd					Permet de changer le password du user actuel
 
 
-blablabla
+
+OS - LABO 3
+Commandes Linux :
+
+vim <nom_fichier>			Crée le fichier cité s'il n'est pas déja créé et l'édite avec vim
+nano <nom_fichier>			Crée le fichier cité s'il n'est pas déja créé et l'édite avec nano
+cat <nom_fichier>			Affiche le contenu du fichier dans l'invite de commande
+<commande> > <nom_fichier>		Redirige le résultat de la commande dans un fichier de texte
+su -					Permet de se connecter en tant que superutilisateur root
+fdisk -l				Liste les disques et donne leur principales caractéristiques
+adduser	<nom_utilisateur>		Ajoute un nouvel utilisateur
+useradd	<nom_utilisateur> -u<UID>	Ajoute un nouvel utilisateur avec un UID déterminé
+usermod -aG sudo <nom_utilisateur>	Ajoute l'utilisateur au groupe sudo
+groups <nom_utilisateur>		Visualise dans quel(s) groupe(s) est l'utilisateur
+sudo <commande>				Réalise cette commande avec des privilèges supplémentaires
+
+
+
+OS - LABO 4 :
+Commandes Linux :
+
+mkdir -p <nom_repertoire>{00..10}	Crée un ensemble de répertoires de même nom, suivi d'une incrémentation de 00 à 10
+rm <nom_fichier/nom_repertoire>		Efface le fichier ou répertoire
+mkdir -p <nom_repertoire>/<nom_sous_repertoire>		Crée le répertoire et le sous répertoire
+touch <nom_fichier>{00..10}		Crée un ensemble de fichiers de même nom, suivi d'une incrémentation de 00 à 10
+mv <nom_fichier/nom_repertoire_1> <nom_repertoire_2>	Déplace le fichier ou répertoire 1 dans le répertoire 2
+echo <message>				Affiche le message dans l'invite de commande
+	$(date +%d/%m/%y)			date en format jj/mm/aa
+	$(date +%T)				heure
+
+Exemple d'application :
+find /home/user/labo4 -type d -name "fic*0*" -exec sh -c 'mkdir -p "$1" && touch "$1/nv_$(date +%y_%m_%d)"' sh {}\;
+
+--> Dans chaque dossier ficxx (de 00 à 99) contenant un « 0 », crée un fichier « nv_date » où « date » est la date au format aa_mm_jj
+
+
+
+
 
 
